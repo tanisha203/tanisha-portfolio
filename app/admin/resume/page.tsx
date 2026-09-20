@@ -72,7 +72,7 @@ export default function AdminResume() {
       .from("resumes")
       .getPublicUrl("resume.pdf");
 
-    const resumeUrl = publicUrlData.publicUrl;
+    const resumeUrl = `${publicUrlData.publicUrl}?v=${Date.now()}`;
 
     const { data: existing } = await supabase
       .from("site_settings")
